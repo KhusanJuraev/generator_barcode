@@ -32,7 +32,8 @@ function generateBarcodes() {
             JsBarcode(`#A${value}`, value, {
                 format: barcode_type,
                 lineColor: "#000",
-                displayValue: show_text
+                displayValue: show_text,
+                fontSize: 24
             })
         })
 
