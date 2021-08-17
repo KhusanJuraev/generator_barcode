@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Генератор штрих-кода</title>
+    <link href="assets/src/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="row justify-content-center">
+    <div class="col-md-4 col-md-offset-4 codeContainer bg-white p-0 mt-5 ">
+        <h3 class="banner text-center m-0">Генератор штрих-кода</h3>
+        <div class="pd-15">
+
+            <div class="form-group pb-3">
+                <label for="barcodeValue" class="pb-1 check-text">Кодируемые данные:</label>
+                <input type="text" id="barcodeValue" minlength="5" maxlength="13" class="form-control check-input" name="barcode">
+            </div>
+
+            <div class="form-group pb-3 d-flex justify-content-between">
+                <div class="w-100 me-3">
+                    <label for="startValue" class="pb-1">Начальное значение:</label>
+                    <input type="number" id="startValue" class="form-control" min="1" value="1" name="barcode">
+                </div>
+                <div class="w-100">
+                    <label for="endValue" class="pb-1">Конечное значение:</label>
+                    <input type="number" id="endValue" class="form-control" value="10" name="barcode">
+                </div>
+            </div>
+
+            <div class="form-group pb-3">
+                <label for="barcodeType" class="pb-1">Тип штрих-кода:</label>
+                <select id="barcodeType" class="form-control">
+                    <option value="code128">Code 128</option>
+                    <option value="codabar">Codabar</option>
+                    <option value="code39">Code39</option>
+                    <option value="msi">MSI</option>
+                    <option value="pharmacode">Pharmacode</option>
+                </select>
+            </div>
+
+            <div class="form-group pb-3">
+                <label for="showText" class="pb-1">Показать текст:</label>
+                <select id="showText" class="form-control" required>
+                    <option value="true">Да</option>
+                    <option value="false">Нет</option>
+                </select>
+            </div>
+
+            <div class="d-flex pb-3">
+                <input type="button" onclick="generateBarcodes()" class="btn btn-success form-control me-3" value="Генерировать">
+                <input type="button" onclick="downloadAllImg()" class="btn btn-outline-success form-control" value="Скачать">
+            </div>
+
+            <div class="form-group form-floating pb-3">
+                <textarea class="form-control" placeholder="Leave a comment here" id="textBarcodes" style="height: 100px"></textarea>
+                <label for="textBarcodes">Штрих коды:</label>
+            </div>
+
+            <input type="button" onclick="copyBarcodes()" class="btn btn-success form-control" value="Копировать">
+        </div>
+
+        <div class="barcodes pd-15 text-center"></div>
+    </div>
+</div>
+<script src="assets/src/JsBarcode.all.min.js"></script>
+<script src="assets/js/index.js"></script>
+</body>
+</html>
