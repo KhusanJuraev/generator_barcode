@@ -17,6 +17,11 @@
                 <input type="text" id="barcodeValue" minlength="5" maxlength="13" class="form-control check-input" name="barcode">
             </div>
 
+            <div class="form-group pb-3">
+                <label for="goodsText" class="pb-1 check-text">Имя товара:</label>
+                <input type="text" id="goodsText" minlength="5" maxlength="13" class="form-control check-input" name="barcode">
+            </div>
+
             <div class="form-group pb-3 d-flex justify-content-between">
                 <div class="w-100 me-3">
                     <label for="startValue" class="pb-1">Начальное значение:</label>
@@ -60,7 +65,8 @@
             <input type="button" onclick="copyBarcodes()" class="btn btn-success form-control" value="Копировать">
         </div>
 
-        <div class="barcodes pd-15 text-center"></div>
+        <div class="barcodes pd-15 text-center">
+        </div>
     </div>
 </div>
 <script src="assets/src/JsBarcode.all.min.js"></script>

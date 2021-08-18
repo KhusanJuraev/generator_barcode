@@ -8,6 +8,7 @@ function generateBarcodes() {
         start_value = document.getElementById('startValue').value,
         end_value = document.getElementById('endValue').value,
         show_text = document.getElementById('showText').value,
+        goods_text = document.getElementById('goodsText').value,
         barcodes = document.querySelectorAll('.barcode'),
         barcodes_arr = [];
 
@@ -19,7 +20,7 @@ function generateBarcodes() {
             for (let barcode of barcodes) {
                 barcode.remove()
             }
-            text_barcodes.textContent = ""
+            text_barcodes.textContent = ''
         }
 
         for (let i = parseInt(start_value); i <= end_value; i++) {
@@ -36,6 +37,7 @@ function generateBarcodes() {
             })
         })
 
+        addTextToCanvas(goods_text)
     } else {
         document.querySelector('.check-input').classList.add('error-input')
         document.querySelector('.check-text').classList.add('error-text')
@@ -48,7 +50,19 @@ function copyBarcodes() {
 }
 
 function generatorBarcodeHtml(id) {
-    return `<img id="A${id}" class="barcode">`
+    return `<canvas id="A${id}"></canvas>`
+}
+
+function addTextToCanvas(text) {
+    const canvas = document.querySelectorAll('canvas')
+    console.log(canvas)
+    canvas.forEach(item => {
+        let ctx = item.getContext('2d')
+        ctx.font = '18x Arial';
+        ctx.fillStyle = "#000";
+        ctx.fillText(text, -100, 15);
+        ctx.textAlign = 'left'
+    })
 }
 
 function downloadAllImg () {
