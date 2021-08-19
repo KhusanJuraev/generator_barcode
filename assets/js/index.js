@@ -33,7 +33,7 @@ function generateBarcodes() {
                 format: barcode_type,
                 lineColor: "#000",
                 displayValue: show_text,
-                fontSize: "24px"
+                fontSize: 24
             })
         })
 
