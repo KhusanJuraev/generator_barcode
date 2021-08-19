@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Генератор штрих-кода</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="assets/src/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -16,6 +15,11 @@
             <div class="form-group pb-3">
                 <label for="barcodeValue" class="pb-1 check-text">Кодируемые данные:</label>
                 <input type="text" id="barcodeValue" minlength="5" maxlength="13" class="form-control check-input" name="barcode">
+            </div>
+
+            <div class="form-group pb-3">
+                <label for="goodsText" class="pb-1 check-text">Имя товара:</label>
+                <input type="text" id="goodsText" minlength="5" maxlength="13" class="form-control check-input" name="barcode">
             </div>
 
             <div class="form-group pb-3 d-flex justify-content-between">
@@ -33,7 +37,6 @@
                 <label for="barcodeType" class="pb-1">Тип штрих-кода:</label>
                 <select id="barcodeType" class="form-control">
                     <option value="code128">Code 128</option>
-                    <option value="EAN13">EAN13</option>
                     <option value="codabar">Codabar</option>
                     <option value="code39">Code39</option>
                     <option value="msi">MSI</option>
@@ -62,7 +65,8 @@
             <input type="button" onclick="copyBarcodes()" class="btn btn-success form-control" value="Копировать">
         </div>
 
-        <div class="barcodes pd-15 d-flex flex-wrap justify-content-around"></div>
+        <div class="barcodes pd-15 d-flex flex-wrap justify-content-around">
+        </div>
     </div>
 </div>
 <script src="assets/src/JsBarcode.all.min.js"></script>
