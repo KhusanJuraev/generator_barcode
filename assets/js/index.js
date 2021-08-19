@@ -8,7 +8,8 @@ function generateBarcodes() {
         start_value = document.getElementById('startValue').value,
         end_value = document.getElementById('endValue').value,
         show_text = document.getElementById('showText').value,
-        barcodes = document.querySelectorAll('.barcode'),
+        goods_text = document.getElementById('goodsText').value,
+        barcodes = document.querySelectorAll('canvas'),
         barcodes_arr = [];
 
     if (barcode_value) {
@@ -19,7 +20,7 @@ function generateBarcodes() {
             for (let barcode of barcodes) {
                 barcode.remove()
             }
-            text_barcodes.textContent = ""
+            text_barcodes.textContent = ''
         }
 
         for (let i = parseInt(start_value); i <= end_value; i++) {
@@ -29,14 +30,13 @@ function generateBarcodes() {
         }
 
         barcodes_arr.map((value) => {
-            JsBarcode(`#A${value}`, value, {
+            JsBarcode(`#B${value}`, value, {
                 format: barcode_type,
-                lineColor: "#000",
-                displayValue: show_text,
-                fontSize: 24
+                lineColor: '#000',
+                displayValue: show_text
             })
         })
-
+        addTextToCanvas(goods_text)
     } else {
         document.querySelector('.check-input').classList.add('error-input')
         document.querySelector('.check-text').classList.add('error-text')
@@ -45,25 +45,38 @@ function generateBarcodes() {
 
 function copyBarcodes() {
     text_barcodes.select()
-    document.execCommand("copy")
+    document.execCommand('copy')
 }
 
 function generatorBarcodeHtml(id) {
-    return `<img id="A${id}" class="barcode">`
+    return `<canvas id="B${id}"></canvas>`
+}
+
+function addTextToCanvas(text) {
+    const canvas = document.querySelectorAll('canvas')
+    canvas.forEach(item => {
+        let ctx = item.getContext('2d')
+        ctx.fillStyle = '#fff';
+        ctx.fillRect(-300, 10, item.width + 200, item.height / 10);
+        ctx.font = 'regular 16px monospace';
+        ctx.fillStyle = '#000';
+        ctx.textAlign = 'center';
+        ctx.fillText(text, -90, 20);
+    })
 }
 
 function downloadAllImg () {
-    const images = document.getElementsByTagName('img')
-    const srcList = []
+    const canvas = document.getElementsByTagName('canvas')
     let i = 0
-
-    setInterval(function () {
-        srcList.push(images[i].src)
+    let start_download = setInterval(function () {
         const link = document.createElement('a');
         link.id = i;
-        link.download = images[i].id;
-        link.href = images[i].src;
+        link.download = canvas[i].id;
+        link.href = canvas[i].toDataURL('image/png');
         link.click()
         i++;
     }, 500)
+    setTimeout(() => {
+        clearInterval(start_download)
+    }, canvas.length * 500)
 }
