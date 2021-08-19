@@ -57,13 +57,13 @@ function addTextToCanvas(text) {
     const canvas = document.querySelectorAll('canvas')
     canvas.forEach(item => {
         let ctx = item.getContext('2d')
-        ctx.fillStyle = "#000";
-        ctx.fillRect(10,10, 50, 140);
         ctx.font = "18px serif";
         ctx.fillStyle = '#000';
         ctx.textBaseline = "middle";
         ctx.textAlign = "center";
         ctx.fillText(text, -90, 15);
+        ctx.fillStyle = "#fff";
+        ctx.fillRect(10,10, item.weight, 30);
     })
 }
 
