@@ -60,7 +60,7 @@ function addTextToCanvas(text) {
         ctx.fillRect(-300, 10, item.width + 200, item.height / 10);
         ctx.font = 'regular 15px monospace';
         ctx.fillStyle = '#000';
-        ctx.textAlign = 'left';
+        ctx.textAlign = 'right';
         ctx.fillText(text, -100, 20);
     })
 }
