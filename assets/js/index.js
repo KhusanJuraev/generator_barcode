@@ -61,7 +61,7 @@ function addTextToCanvas(text) {
         ctx.font = 'regular 15px monospace';
         ctx.fillStyle = '#000';
         ctx.textAlign = 'center';
-        ctx.fillText(text, -90, 20);
+        ctx.fillText(text, -100, 20);
     })
 }
 
