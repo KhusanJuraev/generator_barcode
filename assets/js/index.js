@@ -92,7 +92,7 @@ function printBarcodes() {
         printable: images,
         type: 'image',
         imageStyle: 'width:50%;margin-bottom:20px;',
-        documentTitle: null,
+        documentTitle: '.',
         timeOrigin: null,
     })
 }
