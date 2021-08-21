@@ -1,8 +1,6 @@
 @import "../src/fonts/Poppins-Regular.ttf";
 @import "../src/fonts/Poppins-Medium.ttf";
 @import "../src/fonts/Poppins-ExtraBold.ttf";
-@import "../src/fonts/ZillaSlabHighlight-Bold.ttf";
-@import "../src/fonts/ZillaSlabHighlight-Regular.ttf";
 
 * {
     font-family: 'Poppins', sans-serif;
