@@ -35,6 +35,7 @@ function generateBarcodes() {
                 lineColor: '#000',
                 displayValue: show_text,
                 width: 3,
+                height: 3,
                 fontSize: 28
             })
         })
