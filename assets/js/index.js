@@ -91,7 +91,7 @@ function printBarcodes() {
     printJS({
         printable: images,
         type: 'image',
-        imageStyle: 'width:100%; margin-top: 200px;',
+        imageStyle: 'width:100%; margin-top: 150px;',
         documentTitle: '.',
         timeOrigin: null,
     })
