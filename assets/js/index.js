@@ -34,7 +34,7 @@ function generateBarcodes() {
                 format: barcode_type,
                 lineColor: '#000',
                 displayValue: show_text,
-                fontSize: 24
+                fontSize: 28
             })
         })
         addTextToCanvas(goods_text)
@@ -59,7 +59,7 @@ function addTextToCanvas(text) {
         let ctx = item.getContext('2d')
         ctx.fillStyle = '#fff';
         ctx.fillRect(-300, 10, item.width + 200, item.height / 10);
-        ctx.font = 'regular 20px monospace';
+        ctx.font = 'regular 24px monospace';
         ctx.fillStyle = '#000';
         ctx.textAlign = 'center';
         ctx.fillText(text, item.width / 2 - item.width + 10, 20);
