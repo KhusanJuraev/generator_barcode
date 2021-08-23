@@ -59,7 +59,7 @@ function addTextToCanvas(text) {
     canvas.forEach(item => {
         let ctx = item.getContext('2d')
         ctx.fillStyle = '#fff';
-        ctx.fillRect(-500, 10, item.width + 500, item.height / 10);
+        ctx.fillRect(-300, 10, item.width + 200, item.height / 10);
         ctx.font = 'regular 24px monospace';
         ctx.fillStyle = '#000';
         ctx.textAlign = 'center';
