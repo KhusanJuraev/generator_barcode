@@ -88,7 +88,7 @@ function printBarcodes() {
     for (let img of canvas) {
         images.push(img.toDataURL('image/png'))
     }
-    console.log(images)
+    
     printJS({
         printable: images,
         type: 'image',
