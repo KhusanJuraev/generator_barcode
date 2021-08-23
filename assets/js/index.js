@@ -34,8 +34,6 @@ function generateBarcodes() {
                 format: barcode_type,
                 lineColor: '#000',
                 displayValue: show_text,
-                width: 532,
-                height: 300,
                 fontSize: 28
             })
         })
