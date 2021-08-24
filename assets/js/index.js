@@ -34,7 +34,7 @@ function generateBarcodes() {
                 format: barcode_type,
                 lineColor: '#000',
                 displayValue: show_text,
-                fontSize: 28
+                fontSize: 26
             })
         })
         addTextToCanvas(goods_text)
