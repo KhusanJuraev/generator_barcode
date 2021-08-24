@@ -77,6 +77,7 @@ function downloadAllImg () {
         link.click()
         i++;
     }, 500)
+    
     setTimeout(() => {
         clearInterval(start_download)
     }, canvas.length * 500)
