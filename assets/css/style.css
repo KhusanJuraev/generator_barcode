@@ -1,0 +1,50 @@
+@import "../resource/fonts/Poppins-Regular.ttf";
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #26A69A;
+}
+
+.codeContainer {
+    border-radius: 10px;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14),
+                0 1px 10px 0 rgba(0,0,0,0.12),
+                0 2px 4px -1px rgba(0,0,0,0.3);
+}
+
+.banner {
+    background: #e0dddd;
+    padding: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.pd-15 {
+    padding: 15px;
+}
+
+.error-input {
+    border: 1px solid red;
+}
+.error-text {
+    color: red;
+}
+
+canvas {
+    border-bottom: 1px solid silver;
+    padding: 10px 0;
+}
+
+.print {
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
+    padding: 14px;
+}
+
+.print svg {
+    width: 24px;
+}
