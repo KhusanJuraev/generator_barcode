@@ -79,7 +79,7 @@ function downloadAllImg () {
     setTimeout(() => {
         $.ajax({
             type: "POST",
-            url: "/generator_barcode-master/generator_barcode-master/server/index.php",
+            url: "/generator_barcode-master/server/index.php",
             data: {
                 images: array
             },
@@ -102,9 +102,9 @@ function downloadAllImg () {
 function downloadZipFile() {
     const a = document.createElement('a')
     a.download = 'barcode-file'
-    a.href = '/generator_barcode-master/generator_barcode-master/server/images.zip'
+    a.href = '/generator_barcode-master/server/images.zip'
     a.click()
-    const zipFile = '/generator_barcode-master/generator_barcode-master/server/images.zip'
+    const zipFile = '/generator_barcode-master/server/images.zip'
 
 }
 
