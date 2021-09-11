@@ -1,8 +1,5 @@
 <?php
 
-//    $data = json_decode($_POST['images']);
-//    var_dump($data);
-
     foreach ($_POST['images'] as $key => $value) {
         base64_to_jpeg($value, __DIR__ . '/images/' . $key . 'image.jpeg');
     }
@@ -21,13 +18,13 @@
 
     # loop through each file
     foreach($files as $file){
-
+        
         # download file
         $download_file = file_get_contents($file);
 
         #add it to the zip
         $zip->addFromString(basename($file),$download_file);
-
+        
     }
 
     # close zip
@@ -36,8 +33,6 @@
     foreach($files as $file)
         if(is_file($file))
             unlink($file); // delete file
-
-//    unlink('images.zip');
 
 function base64_to_jpeg($base64_string, $output_file) {
     // open the output file for writing
