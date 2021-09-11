@@ -86,7 +86,6 @@ function downloadAllImg () {
             error: function (xhr, status, error) {
                 let err = eval("(" + xhr.responseText + ")");
                 console.log(err.Message);
-
             }
         }).done(function(o) {
             setTimeout(() => downloadZipFile(), 1000)
