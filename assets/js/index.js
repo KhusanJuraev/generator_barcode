@@ -90,7 +90,6 @@ function downloadAllImg () {
         }).done(function(o) {
             setTimeout(() => downloadZipFile(), 1000)
         });
-
     }, 5000);
 
     setTimeout(() => {
@@ -104,12 +103,12 @@ function downloadZipFile() {
     a.href = '/generator_barcode-master/server/images.zip'
     a.click()
     const zipFile = '/generator_barcode-master/server/images.zip'
-
 }
 
 function printBarcodes() {
     const canvas = document.getElementsByTagName('canvas')
     const images = []
+    
     for (let img of canvas) {
         images.push(img.toDataURL('image/png'))
     }
